@@ -9,6 +9,8 @@ import { PromotionComponent } from './promotion/promotion/promotion.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us/contact-us.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgbCarouselConfig, NgbModule } from '../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { ContactUsComponent } from './contact-us/contact-us/contact-us.component
     ContactUsComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -41,7 +46,7 @@ import { ContactUsComponent } from './contact-us/contact-us/contact-us.component
     ]),
     BrowserModule
   ],
-  providers: [],
+  providers: [NgbCarouselConfig],
   bootstrap: [AppComponent]
 })
 

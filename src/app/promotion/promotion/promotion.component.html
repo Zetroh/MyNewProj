@@ -1,58 +1,70 @@
 <div class="container">
   <div class="jumbotron">
-    <div class="row">
-      <div class="col-sm-4">
-        Name
-      </div>
-      <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Name">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        Email Address
-      </div>
-      <div class="col-sm-4">
-        <input type="text" class="form-control" placeholder="Email">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        Distanc
-      </div>
-      <div class="col-sm-4">
-        <input type="number" class="form-control" placeholder="20">
-      </div>
-      <div class="col-sm-1">
-        km
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        Trip
-      </div>
-      <div class="col-sm-4">
-        <label>
-          <input type="radio" name="trip"> One way
-        </label>
-        <label>
-          <input type="radio" name="trip"> Two way
-        </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        Vehicle Type
-      </div>
-      <div class="col-sm-4">
-        <select class="form-control">
-            <option value="0">Ferrari</option>
-            <option value="1">Limousine</option>
-            <option value="2">Mercedes</option>
-            <option value="3">Audi</option>
-          </select>
-      </div>
-      <div class="col-sm-2">
-          <button type="submit" class="form-control Sbtn btn-primary">Submit</button>
+    <form [formGroup]="quote">
+      <div class="row">
+        <div class="col-sm-4">
+          Name
         </div>
-    </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Name" formControlName="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          Email Address
+        </div>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Email" formControlName="email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          Distance
+        </div>
+        <div class="col-sm-4">
+          <input type="number" class="form-control" placeholder="20" formControlName="distance">
+        </div>
+        <div class="col-sm-1">
+          km
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          Trip
+        </div>
+        <div class="col-sm-4">
+          <label>
+            <input type="radio" name="trip" value="oneWay" formControlName="trip"> One way
+          </label>
+          <label>
+            <input type="radio" name="trip" value="twoWay" formControlName="trip"> Two way
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          Vehicle Type
+        </div>
+        <div class="col-sm-4">
+          <select class="form-control" formControlName="carType">
+            <option value="0">Mercedes</option>
+            <option value="1">Audi</option>
+          </select>
+        </div>
+        <div class="quote col-sm-4" *ngIf="ButtonClicked">
+          R {{totalPrice}}
+          </div>
+      </div>
+<br>
+      <div class="row">
+          <div class="col-sm-4">
+          </div>
+          <div class="col-sm-4">
+              <button type="submit" class="form-control Sbtn btn-primary" (click)="submit()">Submit</button>            
+
+            </div>
+          </div>
+    </form>
+  </div>
+
+</div>

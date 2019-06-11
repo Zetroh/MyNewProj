@@ -1,5 +1,25 @@
 <div class="container">
-  <div class="jumbotron">
-    Welcome to my Testing App
-  </div>
+    <ngb-carousel [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+        <ng-template ngbSlide>
+          <img src="../../../assets/684-900x500.jpg" alt="Random slide" height="300px" width="1000px">
+          <div class="carousel-caption">
+            <h3>No mouse navigation</h3>
+            <p>This carousel hides navigation arrows and indicators.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="../../../assets/1063-900x500.jpg" alt="Random first slide" height="300px" width="1000px">
+          <div class="carousel-caption">
+            <h3>10 seconds between slides...</h3>
+            <p>This carousel uses customized default values.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="../../../assets/1063-900x500.jpg" alt="Random first slide" height="300px" width="1000px">
+          <div class="carousel-caption">
+            <h3>10 seconds between slides...</h3>
+            <p>This carousel uses customized default values.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
 </div>
